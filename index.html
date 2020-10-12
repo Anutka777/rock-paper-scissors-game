@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //Computer random choce function
+    function computerPlay () {
+      let computerSelection;
+      let randomThrow = Math.random();
+      if (randomThrow <= 0.33) {
+        computerSelection = "Rock";
+      } else if (randomThrow > 0.33 && randomThrow <= 0.66) {
+        computerSelection = "Paper";
+      } else {
+        computerSelection = "Scissors";
+      }
+      return computerSelection;
+    }
+
+    //Single round play function
+    
+  </script>
+</body>
+</html>
