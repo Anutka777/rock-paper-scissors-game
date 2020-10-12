@@ -22,7 +22,7 @@
       return computerSelection;
     }
 
-    //Single round play function
+    //Player choice funcrion
     function userPlay() {
       let playerSelection;
       let inputThrow = prompt("Enter your trow: rock, paper or scissors")
@@ -37,6 +37,62 @@
         alert("Something was misspeled");
       }
       return (playerSelection);
+    }
+
+    //Main function
+    function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    playSingleRound();
+    playSingleRound();
+    playSingleRound();
+    playSingleRound();
+    playSingleRound();
+    }
+
+    //Single play round function
+    function playSingleRound(playerSelection, computerSelection) {
+      if (playerSelection === "Rock") {
+        if (computerSelection === "Rock") {
+          alert("It's a tie ...");
+        } else if (computerSelection === "Paper") {
+          alert("You chose Rock. Opponent chose Paper. You lost a round =(");
+          computerScore++;
+        } else if (computerSelection === "Scissors") {
+          alert("You chose Rock. Opponent chose Scissors. You won a round!");
+           playerScore++;
+        } else {
+          alert("You found yourself a bug! Great job!");
+        }
+      }
+
+      if (playerSelection === "Paper") {
+        if (computerSelection === "Paper") {
+          alert("It's a tie ...");
+        } else if (computerSelection === "Scissors") {
+          alert("You chose Paper. Opponent chose Scissors. You lost a round =(");
+          computerScore++;
+        } else if (computerSelection === "Rock") {
+          alert("You chose Paper. Opponent chose Rock. You won a round!");
+          playerScore++;
+        } else {
+          alert("You found yourself a bug! Great job!");
+        }
+      }
+
+      if (playerSelection === "Scissors") {
+        if (computerSelection === "Scissors") {
+          alert("It's a tie ...");
+        } else if (computerSelection === "Rock") {
+          alert("You chose Scissors. Opponent chose Rock. You lost a round =(");
+          computerScore++;
+        } else if (computerSelection === "Paper") {
+          alert("You chose Scissors. Opponent chose Paper. You won a round!");
+          playerScore++;
+        } else {
+          alert("You found yourself a bug! Great job!");
+        }
+      }
     }
   </script>
 </body>
