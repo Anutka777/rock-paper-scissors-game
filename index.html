@@ -9,7 +9,7 @@
 
   <script>
     //Computer random choce function
-    function computerPlay () {
+    function computerPlay() {
       let computerSelection;
       let randomThrow = Math.random();
       if (randomThrow <= 0.33) {
@@ -23,7 +23,21 @@
     }
 
     //Single round play function
-    
+    function userPlay() {
+      let playerSelection;
+      let inputThrow = prompt("Enter your trow: rock, paper or scissors")
+      inputThrow = inputThrow.toLowerCase();
+      if (inputThrow === "rock") {
+        playerSelection = "Rock";
+      } else if (inputThrow === "paper") {
+        playerSelection = "Paper";
+      } else if (inputThrow === "scissors") {
+        playerSelection = "Scissors";
+      } else {
+        alert("Something was misspeled");
+      }
+      return (playerSelection);
+    }
   </script>
 </body>
 </html>
