@@ -8,9 +8,13 @@
 <body>
 
   <script>
+    let playerSelection;
+    let computerSelection;
+    let playerScore = 0;
+    let computerScore = 0;
+     
     //Computer random choce function
     function computerPlay() {
-      let computerSelection;
       let randomThrow = Math.random();
       if (randomThrow <= 0.33) {
         computerSelection = "Rock";
@@ -24,7 +28,6 @@
 
     //Player choice funcrion
     function userPlay() {
-      let playerSelection;
       let inputThrow = prompt("Enter your trow: rock, paper or scissors")
       inputThrow = inputThrow.toLowerCase();
       if (inputThrow === "rock") {
@@ -41,13 +44,11 @@
 
     //Main function
     function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    playSingleRound();
-    playSingleRound();
-    playSingleRound();
-    playSingleRound();
-    playSingleRound();
+      playSingleRound();
+      playSingleRound();
+      playSingleRound();
+      playSingleRound();
+      playSingleRound();
     }
 
     //Single play round function
