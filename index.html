@@ -24,6 +24,7 @@
         computerSelection = "Scissors";
       }
       return computerSelection;
+      console.log(computerSelection);
     }
 
     //Player choice funcrion
@@ -42,15 +43,7 @@
       return (playerSelection);
     }
 
-    //Main function
-    function game() {
-      playSingleRound();
-      playSingleRound();
-      playSingleRound();
-      playSingleRound();
-      playSingleRound();
-    }
-
+    
     //Single play round function
     function playSingleRound(playerSelection, computerSelection) {
       if (playerSelection === "Rock") {
@@ -61,12 +54,12 @@
           computerScore++;
         } else if (computerSelection === "Scissors") {
           alert("You chose Rock. Opponent chose Scissors. You won a round!");
-           playerScore++;
+          playerScore++;
         } else {
           alert("You found yourself a bug! Great job!");
         }
       }
-
+      
       if (playerSelection === "Paper") {
         if (computerSelection === "Paper") {
           alert("It's a tie ...");
@@ -80,7 +73,7 @@
           alert("You found yourself a bug! Great job!");
         }
       }
-
+      
       if (playerSelection === "Scissors") {
         if (computerSelection === "Scissors") {
           alert("It's a tie ...");
@@ -95,6 +88,32 @@
         }
       }
     }
-  </script>
+
+    //Main function
+    function game() {
+      computerPlay();
+      userPlay();
+      playSingleRound(playerSelection, computerSelection);
+      computerPlay();
+      userPlay();
+      playSingleRound(playerSelection, computerSelection);
+      computerPlay();
+      userPlay();
+      playSingleRound(playerSelection, computerSelection);
+      computerPlay();
+      userPlay();
+      playSingleRound(playerSelection, computerSelection);
+      computerPlay();
+      userPlay();
+      playSingleRound(playerSelection, computerSelection);
+      if (computerScore > playerScore) {
+        alert("Computer won the game =(");
+      } else if (playerScore > computerScore) {
+        alert("You won the game!");
+      } else {
+        alert("It's a tie");
+      }
+    }
+    </script>
 </body>
 </html>
