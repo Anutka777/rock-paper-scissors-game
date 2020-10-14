@@ -8,28 +8,29 @@
 <body>
 
   <script>
+    //Storing throws for both opponents
     let playerSelection;
     let computerSelection;
+    //Storing game score
     let playerScore = 0;
     let computerScore = 0;
      
-    //Computer random choce function
+    //Computer random throw function
     function computerPlay() {
-      let randomThrow = Math.random();
-      if (randomThrow <= 0.33) {
+      let randomComputerThrow = Math.random();
+      if (randomComputerThrow <= 0.33) {
         computerSelection = "Rock";
-      } else if (randomThrow > 0.33 && randomThrow <= 0.66) {
+      } else if (randomComputerThrow > 0.33 && randomComputerThrow <= 0.66) {
         computerSelection = "Paper";
       } else {
         computerSelection = "Scissors";
       }
-      return computerSelection;
-      console.log(computerSelection);
+      return (computerSelection);
     }
 
-    //Player choice funcrion
+    //Player throw function
     function userPlay() {
-      let inputThrow = prompt("Enter your trow: rock, paper or scissors")
+      let inputThrow = prompt("What you wish to throw?\nEnter: rock, paper or scissors")
       inputThrow = inputThrow.toLowerCase();
       if (inputThrow === "rock") {
         playerSelection = "Rock";
@@ -38,7 +39,7 @@
       } else if (inputThrow === "scissors") {
         playerSelection = "Scissors";
       } else {
-        alert("Something was misspeled");
+        alert("Something was misspeled.\nYour opponnent graciously agrees for tie round.");
       }
       return (playerSelection);
     }
@@ -48,43 +49,43 @@
     function playSingleRound(playerSelection, computerSelection) {
       if (playerSelection === "Rock") {
         if (computerSelection === "Rock") {
-          alert("It's a tie ...");
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Paper") {
-          alert("You chose Rock. Opponent chose Paper. You lost a round =(");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
           computerScore++;
         } else if (computerSelection === "Scissors") {
-          alert("You chose Rock. Opponent chose Scissors. You won a round!");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
           playerScore++;
         } else {
-          alert("You found yourself a bug! Great job!");
+          alert("You found yourself a bug! Please contact me.");
         }
       }
       
       if (playerSelection === "Paper") {
         if (computerSelection === "Paper") {
-          alert("It's a tie ...");
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Scissors") {
-          alert("You chose Paper. Opponent chose Scissors. You lost a round =(");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
           computerScore++;
         } else if (computerSelection === "Rock") {
-          alert("You chose Paper. Opponent chose Rock. You won a round!");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
           playerScore++;
         } else {
-          alert("You found yourself a bug! Great job!");
+          alert("You found yourself a bug! Please contact me.");
         }
       }
       
       if (playerSelection === "Scissors") {
         if (computerSelection === "Scissors") {
-          alert("It's a tie ...");
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Rock") {
-          alert("You chose Scissors. Opponent chose Rock. You lost a round =(");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
           computerScore++;
         } else if (computerSelection === "Paper") {
-          alert("You chose Scissors. Opponent chose Paper. You won a round!");
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
           playerScore++;
         } else {
-          alert("You found yourself a bug! Great job!");
+          alert("You found yourself a bug! Please contact me.");
         }
       }
     }
