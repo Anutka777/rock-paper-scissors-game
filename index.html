@@ -14,6 +14,9 @@
     //Storing game score
     let playerScore = 0;
     let computerScore = 0;
+
+    //Hint for starting the game
+    alert("Please open your browser console.\nHit [Ctrl+Shift+J] or [Cmd+Shift+J] on Mac\nThen type 'game()' without quotes to start.");
      
     //Computer random throw function
     function computerPlay() {
@@ -39,7 +42,8 @@
       } else if (inputThrow === "scissors") {
         playerSelection = "Scissors";
       } else {
-        alert("Something was misspeled.\nYour opponnent graciously agrees for tie round.");
+        alert("Something was misspeled.");
+        playerSelection = "Misspelling"
       }
       return (playerSelection);
     }
@@ -47,7 +51,12 @@
     
     //Single play round function
     function playSingleRound(playerSelection, computerSelection) {
-      if (playerSelection === "Rock") {
+      if (playerSelection === "Misspelling") {
+
+        alert("Your opponnent graciously agrees for tie round.");
+
+      } else if (playerSelection === "Rock") {
+
         if (computerSelection === "Rock") {
           alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Paper") {
@@ -59,9 +68,9 @@
         } else {
           alert("You found yourself a bug! Please contact me.");
         }
-      }
-      
-      if (playerSelection === "Paper") {
+
+      } else if (playerSelection === "Paper") {
+
         if (computerSelection === "Paper") {
           alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Scissors") {
@@ -73,9 +82,9 @@
         } else {
           alert("You found yourself a bug! Please contact me.");
         }
-      }
-      
-      if (playerSelection === "Scissors") {
+
+      } else if (playerSelection === "Scissors") {
+
         if (computerSelection === "Scissors") {
           alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
         } else if (computerSelection === "Rock") {
@@ -92,6 +101,8 @@
 
     //Main function
     function game() {
+      computerScore = 0;
+      playerScore = 0;
       computerPlay();
       userPlay();
       playSingleRound(playerSelection, computerSelection);
