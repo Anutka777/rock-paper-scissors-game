@@ -8,6 +8,7 @@
 <body>
 
   <script>
+
     //Storing throws for both opponents
     let playerSelection;
     let computerSelection;
@@ -99,31 +100,25 @@
       }
     }
 
-    //Main function
+    //Main function - need iteration, score display
     function game() {
-      computerScore = 0;
+
+      //Clearing the score for new game
       playerScore = 0;
+      computerScore = 0;
+
+      for (let roundCounter = 1; roundCounter <=  5; roundCounter++) {
       computerPlay();
       userPlay();
       playSingleRound(playerSelection, computerSelection);
-      computerPlay();
-      userPlay();
-      playSingleRound(playerSelection, computerSelection);
-      computerPlay();
-      userPlay();
-      playSingleRound(playerSelection, computerSelection);
-      computerPlay();
-      userPlay();
-      playSingleRound(playerSelection, computerSelection);
-      computerPlay();
-      userPlay();
-      playSingleRound(playerSelection, computerSelection);
+      alert(`Round: ${roundCounter} \nYour score: ${playerScore} \nOpponent score: ${computerScore} \n${5 - roundCounter} rounds left`)
+      }
       if (computerScore > playerScore) {
-        alert("Computer won the game =(");
+        alert("Opponent won the game =(");
       } else if (playerScore > computerScore) {
         alert("You won the game!");
       } else {
-        alert("It's a tie");
+        alert("It's a tie! \nPeace ^-^");
       }
     }
     </script>
