@@ -16,25 +16,27 @@
   </div>
 
   <script>
-    //Storing throws for both opponents
+    // Storing throws for both opponents
     let playerSelection;
     let computerSelection;
-    //Storing game score
+    // Storing game score
     let playerScore = 0;
     let computerScore = 0;
 
-    //Computer random throw function
+    // Computer random throw function
     function computerPlay() {
+      // Empty array for choices
       let throwVariants = [];
+      // Choose all buttons on document and add their text content to an array
       for (let i = 0; i < document.getElementsByTagName("button").length; i++) {
         throwVariants.push(document.getElementsByTagName("button")[i].textContent);
       }
+      // Random item from array
       let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
-      // console.log(throwVariants);
       return (computerSelection);
     }
 
-    //Player throw function
+    // Player throw function
     document.addEventListener('click', event => {
       if (event.target.nodeName == "BUTTON") {
         let playerSelection = event.target.textContent;
