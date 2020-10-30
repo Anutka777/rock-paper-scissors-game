@@ -9,14 +9,13 @@
 </head>
 <body>
   <div class="container">
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
     <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/38166/rock-paper-scissors-children-clipart-md.png" alt="">
   </div>
 
-  <!-- <script>
-
+  <script>
     //Storing throws for both opponents
     let playerSelection;
     let computerSelection;
@@ -24,111 +23,25 @@
     let playerScore = 0;
     let computerScore = 0;
 
-    //Hint for starting the game
-    alert("Please open your browser console.\nHit [Ctrl+Shift+J] or [Cmd+Shift+J] on Mac\nThen type 'game()' without quotes to start.");
-     
     //Computer random throw function
     function computerPlay() {
-      let randomComputerThrow = Math.random();
-      if (randomComputerThrow <= 0.33) {
-        computerSelection = "Rock";
-      } else if (randomComputerThrow > 0.33 && randomComputerThrow <= 0.66) {
-        computerSelection = "Paper";
-      } else {
-        computerSelection = "Scissors";
+      let throwVariants = [];
+      for (let i = 0; i < document.getElementsByTagName("button").length; i++) {
+        throwVariants.push(document.getElementsByTagName("button")[i].textContent);
       }
+      let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
+      // console.log(throwVariants);
       return (computerSelection);
     }
 
     //Player throw function
-    function userPlay() {
-      let inputThrow = prompt("What you wish to throw?\nEnter: rock, paper or scissors")
-      inputThrow = inputThrow.toLowerCase();
-      if (inputThrow === "rock") {
-        playerSelection = "Rock";
-      } else if (inputThrow === "paper") {
-        playerSelection = "Paper";
-      } else if (inputThrow === "scissors") {
-        playerSelection = "Scissors";
-      } else {
-        alert("Something was misspeled.");
-        playerSelection = "Misspelling"
+    document.addEventListener('click', event => {
+      if (event.target.nodeName == "BUTTON") {
+        let playerSelection = event.target.textContent;
+        return (playerSelection);
       }
-      return (playerSelection);
-    }
+    });
 
-    
-    //Single play round function
-    function playSingleRound(playerSelection, computerSelection) {
-      if (playerSelection === "Misspelling") {
-
-        alert("Your opponnent graciously agrees for tie round.");
-
-      } else if (playerSelection === "Rock") {
-
-        if (computerSelection === "Rock") {
-          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
-        } else if (computerSelection === "Paper") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
-          computerScore++;
-        } else if (computerSelection === "Scissors") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
-          playerScore++;
-        } else {
-          alert("You found yourself a bug! Please contact me.");
-        }
-
-      } else if (playerSelection === "Paper") {
-
-        if (computerSelection === "Paper") {
-          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
-        } else if (computerSelection === "Scissors") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
-          computerScore++;
-        } else if (computerSelection === "Rock") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
-          playerScore++;
-        } else {
-          alert("You found yourself a bug! Please contact me.");
-        }
-
-      } else if (playerSelection === "Scissors") {
-
-        if (computerSelection === "Scissors") {
-          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
-        } else if (computerSelection === "Rock") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
-          computerScore++;
-        } else if (computerSelection === "Paper") {
-          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
-          playerScore++;
-        } else {
-          alert("You found yourself a bug! Please contact me.");
-        }
-      }
-    }
-
-    //Main function
-    function game() {
-
-      //Clearing the score for new game
-      playerScore = 0;
-      computerScore = 0;
-
-      for (let roundCounter = 1; roundCounter <=  5; roundCounter++) {
-      computerPlay();
-      userPlay();
-      playSingleRound(playerSelection, computerSelection);
-      alert(`Round: ${roundCounter} \nYour score: ${playerScore} \nOpponent score: ${computerScore} \n${5 - roundCounter} rounds left`)
-      }
-      if (computerScore > playerScore) {
-        alert("Opponent won the game =(");
-      } else if (playerScore > computerScore) {
-        alert("You won the game!");
-      } else {
-        alert("It's a tie! \nPeace ^-^");
-      }
-    }
-    </script> -->
+  </script>
 </body>
 </html>
