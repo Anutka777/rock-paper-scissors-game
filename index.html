@@ -9,17 +9,18 @@
 </head>
 <body>
   <div id="container">
+    <button id="newGame">New game</button>
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
     <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/38166/rock-paper-scissors-children-clipart-md.png" alt="">
-    <button id="newGame">New game</button>
   </div>
 
   <script>
     // Variables for DOM
     container = document.getElementById('container');
     buttons = document.querySelectorAll('button');
+    ngButton = document.getElementById('newGame');
 
     // Storing game score
     let playerScore = 0;
@@ -29,6 +30,9 @@
     document.getElementById("rock").addEventListener("click", playSingleRoundWithRock);
     document.getElementById("paper").addEventListener("click", playSingleRoundWithPaper);
     document.getElementById("scissors").addEventListener("click", playSingleRoundWithScissors);
+
+    // New game button
+    ngButton.addEventListener('click', newGame);
 
     // Adding div with score
     const divScore = document.createElement('div');
@@ -64,11 +68,11 @@
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         }
-        console.log(computerScore, playerScore);
+        // console.log(computerScore, playerScore);
         if (computerScore === 5 || playerScore === 5) {
-          console.log(computerScore > playerScore);
-          console.log(playerScore > computerScore);
-          console.log("Rock");
+          // console.log(computerScore > playerScore);
+          // console.log(playerScore > computerScore);
+          // console.log("Rock");
           endGame(computerScore, playerScore);
         } 
       }
@@ -87,11 +91,11 @@
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         } 
-        console.log(computerScore, playerScore);
+        // console.log(computerScore, playerScore);
         if (computerScore === 5 || playerScore === 5) {
-          console.log(computerScore > playerScore);
-          console.log(playerScore > computerScore);
-          console.log("Paper");
+          // console.log(computerScore > playerScore);
+          // console.log(playerScore > computerScore);
+          // console.log("Paper");
           endGame(computerScore, playerScore);
         } 
       }
@@ -129,14 +133,27 @@
 
         // Display results
         if (computerScore > playerScore) {
-        divScoreResults.innerHTML = "Opponent won the game =(";
-      } else if (playerScore > computerScore) {
-        divScoreResults.innerHTML = "You won the game!";
-      } else {
-        divScoreResults.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
-      }
+          divScoreResults.innerHTML = "Opponent won the game =(";
+        } else if (playerScore > computerScore) {
+          divScoreResults.innerHTML = "You won the game!";
+        } else {
+          divScoreResults.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
+        }
+
+        // Display New Game button
+        ngButton.style.display = 'block';
       }
       
+      // New Game function
+      function newGame() {
+        Array.from(buttons).forEach(function(btn) {
+          btn.style.display = 'block';
+        });
+        playerScore = 0;
+        computerScore = 0;
+        divScoreText.innerHTML = '';
+        divScoreResults.innerHTML = '';
+      }
   </script>
 </body>
 </html>
