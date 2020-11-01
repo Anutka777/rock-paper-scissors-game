@@ -16,35 +16,33 @@
   </div>
 
   <script>
-    // Storing throws for both opponents
-    let playerSelection;
-    let computerSelection;
     // Storing game score
     let playerScore = 0;
     let computerScore = 0;
 
     // Computer random throw function
     function computerPlay() {
-      // Empty array for choices
+      // Array fo choices
       let throwVariants = ['rock', 'paper', 'scissors'];
       // Random item from array
       let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
       return (computerSelection);
     }
 
-    // Player throw and round
-    // document.getElementById("rock").addEventListener("click", playSingleRound
-    // );
-    // document.getElementById("paper").addEventListener("click", playSingleRound
-    // );
-    // document.getElementById("scissors").addEventListener("click", playSingleRound
-    // );
+    // Player throw and round play
+    document.getElementById("rock").addEventListener("click", playSingleRound
+    );
+    document.getElementById("paper").addEventListener("click", playSingleRound
+    );
+    document.getElementById("scissors").addEventListener("click", playSingleRound
+    );
 
-    // function playSingleRound (e) {
-    //   let playerSelection = e.target.textContent;
-    //   if (playerSelection === computerPlay()) {
-        
-    // }
+    function playSingleRound (e) {
+      let playerSelection = e.target.textContent;
+      let computerSelection = computerPlay();
+      console.log(playerSelection);
+      console.log(computerSelection);
+    }
       
   </script>
 </body>
