@@ -29,20 +29,61 @@
       return (computerSelection);
     }
 
-    // Player throw and round play
-    document.getElementById("rock").addEventListener("click", playSingleRound
+    // Player throw and round play for each button
+    document.getElementById("rock").addEventListener("click", playSingleRoundWithRock
     );
-    document.getElementById("paper").addEventListener("click", playSingleRound
+    document.getElementById("paper").addEventListener("click", playSingleRoundWithPaper
     );
-    document.getElementById("scissors").addEventListener("click", playSingleRound
+    document.getElementById("scissors").addEventListener("click", playSingleRoundWithScissors
     );
 
-    function playSingleRound (e) {
+    // Function for rock button
+    function playSingleRoundWithRock (e) {
       let playerSelection = e.target.textContent;
       let computerSelection = computerPlay();
-      console.log(playerSelection);
-      console.log(computerSelection);
-    }
+      
+      if (computerSelection === "rock") {
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
+        } else if (computerSelection === "paper") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
+          computerScore++;
+        } else if (computerSelection === "scissors") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
+          playerScore++;
+        }
+      }
+
+      // Function fo paper button
+      function playSingleRoundWithPaper (e) {
+      let playerSelection = e.target.textContent;
+      let computerSelection = computerPlay();
+      
+      if (computerSelection === "paper") {
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
+        } else if (computerSelection === "scissors") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
+          computerScore++;
+        } else if (computerSelection === "rock") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
+          playerScore++;
+        } 
+      }
+
+      // Function for Scissors button
+      function playSingleRoundWithScissors (e) {
+      let playerSelection = e.target.textContent;
+      let computerSelection = computerPlay();
+      
+      if (computerSelection === "scissors") {
+          alert(`${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`);
+        } else if (computerSelection === "rock") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`);
+          computerScore++;
+        } else if (computerSelection === "paper") {
+          alert(`You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`);
+          playerScore++;
+        } 
+      }
       
   </script>
 </body>
