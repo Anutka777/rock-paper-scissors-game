@@ -9,7 +9,11 @@ img {
 }
 
 button {
-  display: block;
-  background-color: #fc814a;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background-image: no-repeat;
+  border-radius: 25px;
 }
+
 

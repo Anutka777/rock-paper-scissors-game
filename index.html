@@ -13,7 +13,6 @@
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
-    <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/38166/rock-paper-scissors-children-clipart-md.png" alt="">
   </div>
 
   <script>
@@ -141,13 +140,13 @@
         }
 
         // Display New Game button
-        ngButton.style.display = 'block';
+        ngButton.style.display = 'inline-block';
       }
       
       // New Game function
       function newGame() {
         Array.from(buttons).forEach(function(btn) {
-          btn.style.display = 'block';
+          btn.style.display = 'inline-block';
         });
         playerScore = 0;
         computerScore = 0;
