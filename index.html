@@ -9,10 +9,11 @@
 </head>
 <body>
   <div id="container">
-    <button id="rock">rock</button>
-    <button id="paper">paper</button>
-    <button id="scissors">scissors</button>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
     <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/38166/rock-paper-scissors-children-clipart-md.png" alt="">
+    <button id="newGame">New game</button>
   </div>
 
   <script>
@@ -31,15 +32,19 @@
 
     // Adding div with score
     const divScore = document.createElement('div');
-    let divScoreText = document.createElement('p');
+    divScore.id = "divScore";
+    const divScoreText = document.createElement('p');
+    divScoreText.id = "scoreText";
+    const divScoreResults = document.createElement('p');
+    divScoreResults.id = 'scoreResults';
     divScore.appendChild(divScoreText);
+    divScore.appendChild(divScoreResults);
     container.appendChild(divScore);
-    
     
     // Computer random throw function
     function computerPlay() {
       // Array fo choices
-      const throwVariants = ['rock', 'paper', 'scissors'];
+      const throwVariants = ['Rock', 'Paper', 'Scissors'];
       // Random item from array
       let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
       return (computerSelection);
@@ -50,18 +55,21 @@
       let playerSelection = e.target.textContent;
       let computerSelection = computerPlay();
       
-      if (computerSelection === "rock") {
+      if (computerSelection === "Rock") {
         divScoreText.innerHTML = `${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`;
-        } else if (computerSelection === "paper") {
+        } else if (computerSelection === "Paper") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`;
           computerScore++;
-        } else if (computerSelection === "scissors") {
+        } else if (computerSelection === "Scissors") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         }
         console.log(computerScore, playerScore);
         if (computerScore === 5 || playerScore === 5) {
-          endGame();
+          console.log(computerScore > playerScore);
+          console.log(playerScore > computerScore);
+          console.log("Rock");
+          endGame(computerScore, playerScore);
         } 
       }
 
@@ -70,18 +78,21 @@
       let playerSelection = e.target.textContent;
       let computerSelection = computerPlay();
       
-      if (computerSelection === "paper") {
+      if (computerSelection === "Paper") {
         divScoreText.innerHTML = `${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`;
-        } else if (computerSelection === "scissors") {
+        } else if (computerSelection === "Scissors") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`;
           computerScore++;
-        } else if (computerSelection === "rock") {
+        } else if (computerSelection === "Rock") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         } 
         console.log(computerScore, playerScore);
         if (computerScore === 5 || playerScore === 5) {
-          endGame();
+          console.log(computerScore > playerScore);
+          console.log(playerScore > computerScore);
+          console.log("Paper");
+          endGame(computerScore, playerScore);
         } 
       }
 
@@ -90,17 +101,20 @@
       let playerSelection = e.target.textContent;
       let computerSelection = computerPlay();
       
-      if (computerSelection === "scissors") {
+      if (computerSelection === "Scissors") {
         divScoreText.innerHTML = `${playerSelection} vs ${computerSelection}\n\nIt's a tie ...`;
-        } else if (computerSelection === "rock") {
+        } else if (computerSelection === "Rock") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou lost a round =(`;
           computerScore++;
-        } else if (computerSelection === "paper") {
+        } else if (computerSelection === "Paper") {
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         } 
         console.log(computerScore, playerScore);
         if (computerScore === 5 || playerScore === 5) {
+          console.log(computerScore > playerScore);
+          console.log(playerScore > computerScore);
+          console.log("Scissors");
           endGame(computerScore, playerScore);
         }
       }
@@ -115,11 +129,11 @@
 
         // Display results
         if (computerScore > playerScore) {
-        console.log("Opponent won the game =(\nYou can refresh page for new game.");
+        divScoreResults.innerHTML = "Opponent won the game =(";
       } else if (playerScore > computerScore) {
-        console.log("You won the game!\nYou can refresh page for new game.");
+        divScoreResults.innerHTML = "You won the game!";
       } else {
-        console.log("Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.");
+        divScoreResults.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
       }
       }
       
