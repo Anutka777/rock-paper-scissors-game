@@ -26,24 +26,26 @@
     // Computer random throw function
     function computerPlay() {
       // Empty array for choices
-      let throwVariants = [];
-      // Choose all buttons on document and add their text content to an array
-      for (let i = 0; i < document.getElementsByTagName("button").length; i++) {
-        throwVariants.push(document.getElementsByTagName("button")[i].textContent);
-      }
+      let throwVariants = ['rock', 'paper', 'scissors'];
       // Random item from array
       let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
       return (computerSelection);
     }
 
-    // Player throw function
-    document.addEventListener('click', event => {
-      if (event.target.nodeName == "BUTTON") {
-        let playerSelection = event.target.textContent;
-        return (playerSelection);
-      }
-    });
+    // Player throw and round
+    // document.getElementById("rock").addEventListener("click", playSingleRound
+    // );
+    // document.getElementById("paper").addEventListener("click", playSingleRound
+    // );
+    // document.getElementById("scissors").addEventListener("click", playSingleRound
+    // );
 
+    // function playSingleRound (e) {
+    //   let playerSelection = e.target.textContent;
+    //   if (playerSelection === computerPlay()) {
+        
+    // }
+      
   </script>
 </body>
 </html>
