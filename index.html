@@ -8,7 +8,7 @@
   <title>Rock, paper, scissors game</title>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <button id="rock">rock</button>
     <button id="paper">paper</button>
     <button id="scissors">scissors</button>
@@ -16,6 +16,9 @@
   </div>
 
   <script>
+    // Variables for DOM
+    container = document.getElementById('container');
+
     // Storing game score
     let playerScore = 0;
     let computerScore = 0;
@@ -24,11 +27,16 @@
     document.getElementById("rock").addEventListener("click", playSingleRoundWithRock);
     document.getElementById("paper").addEventListener("click", playSingleRoundWithPaper);
     document.getElementById("scissors").addEventListener("click", playSingleRoundWithScissors);
+
+    // Adding div with score
+    const divScore = document.createElement('div');
+    container.appendChild(divScore);
+    
     
     // Computer random throw function
     function computerPlay() {
       // Array fo choices
-      let throwVariants = ['rock', 'paper', 'scissors'];
+      const throwVariants = ['rock', 'paper', 'scissors'];
       // Random item from array
       let computerSelection = throwVariants[Math.floor(Math.random()*throwVariants.length)];
       return (computerSelection);
@@ -50,7 +58,7 @@
         }
         console.log(computerScore, playerScore);
         if (computerScore === 5) {
-      console.log("Opponent won the game =(");
+          console.log("Opponent won the game =(");
         } else if (playerScore === 5) {
           console.log("You won the game!");
         } 
@@ -72,7 +80,7 @@
         } 
         console.log(computerScore, playerScore);
         if (computerScore === 5) {
-      console.log("Opponent won the game =(");
+          console.log("Opponent won the game =(");
         } else if (playerScore === 5) {
           console.log("You won the game!");
         } 
