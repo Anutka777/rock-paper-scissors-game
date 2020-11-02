@@ -1,4 +1,5 @@
 #button-container {
+  padding: 20px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -14,14 +15,37 @@ button {
   outline:none;
 }
 
+/* Added class */
 .clicked-button {
   transform: scale(0.9);
-  transition: all 0.7s;
+  transition: all 0.2s;
 }
 
-
 #newGame {
-  margin: 10px auto;
+  margin: auto;
+  padding: 20px 0;
+  font-family: 'Sigmar One', cursive;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+/* Animation for New Game button */
+@keyframes scaling {
+  10% {
+      transform: scale(1.0);
+  }
+  100% {
+      transform: scale(0.9);
+  }
+}
+
+#newGame:hover {
+  animation: scaling 0.2s infinite alternate;
+}
+
+/* Hiding button text */
+.choice {
+  font-size: 0px;
 }
 
 #rock {
@@ -39,6 +63,15 @@ button {
   background-position: 1px 1px;
 }
 
+/* Added div */
+#divScore {
+  text-align: center;
+}
 
+#scoreText, #scoreResults, #scoreWinLoose {
+  font-family: 'Sigmar One', cursive;
+}
 
-
+#scoreResults, #scoreWinLoose {
+  font-size: 50px;
+}
