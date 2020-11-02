@@ -1,20 +1,42 @@
-.container{
-  height: 100vh;
-  background-color: #dcedff;
-}
-
-img {
-  margin: 0 auto;
-  width: 400px;
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 button {
-  display: inline-block;
-  width: 120px;
-  height: 20px;
-  background-image: no-repeat;
-  border-radius: 25px;
-  
+  display: block;
+  justify-self: end;
+  width: 140px;
+  height: 140px;
+  background: no-repeat;
+  border: none;
+  outline:none;
+}
+
+.clicked-button {
+  transform: scale(0.9);
+  transition: all 0.7s;
+}
+
+
+#newGame {
+  margin: 10px auto;
+}
+
+#rock {
+  background-image: url(img/stones.png);
+  background-position: 1px 0;
+}
+
+#paper {
+  background-image: url(img/copy.png);
+  background-position: 0 1px;
+}
+
+#scissors {
+  background-image: url(img/scissors.png);
+  background-position: 1px 1px;
 }
 
 

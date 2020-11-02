@@ -38,8 +38,18 @@ function computerPlay() {
   return (computerSelection);
 }
 
+// Remove class
+function removeClass(e) {
+  e.target.classList.remove('clicked-button');
+}
+
 // Function for rock button
 function playSingleRoundWithRock(e) {
+  
+  // Button animation
+  e.target.classList.add('clicked-button');
+  e.target.addEventListener('transitionend', removeClass);
+
   let playerSelection = e.target.textContent;
   let computerSelection = computerPlay();
   
@@ -60,6 +70,11 @@ function playSingleRoundWithRock(e) {
 
 // Function fo paper button
 function playSingleRoundWithPaper(e) {
+
+  // Button animation
+  e.target.classList.add('clicked-button');
+  e.target.addEventListener('transitionend', removeClass);
+
   let playerSelection = e.target.textContent;
   let computerSelection = computerPlay();
   
@@ -80,6 +95,11 @@ function playSingleRoundWithPaper(e) {
 
 // Function for Scissors button
 function playSingleRoundWithScissors(e) {
+
+  // Button animation
+  e.target.classList.add('clicked-button');
+  e.target.addEventListener('transitionend', removeClass);
+
   let playerSelection = e.target.textContent;
   let computerSelection = computerPlay();
   
