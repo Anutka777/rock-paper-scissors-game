@@ -11,9 +11,12 @@ img {
 button {
   display: inline-block;
   width: 120px;
-  height: 120px;
+  height: 20px;
   background-image: no-repeat;
   border-radius: 25px;
+  
 }
+
+
 
 
