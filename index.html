@@ -40,8 +40,11 @@
     divScoreText.id = "scoreText";
     const divScoreResults = document.createElement('p');
     divScoreResults.id = 'scoreResults';
+    const divScoreWinLoose = document.createElement('p');
+    divScoreWinLoose.id = 'scoreWinLoose';
     divScore.appendChild(divScoreText);
     divScore.appendChild(divScoreResults);
+    divScore.appendChild(divScoreWinLoose);
     container.appendChild(divScore);
     
     // Computer random throw function
@@ -67,11 +70,8 @@
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         }
-        // console.log(computerScore, playerScore);
+        divScoreResults.innerHTML = `${playerScore} - ${computerScore}`;
         if (computerScore === 5 || playerScore === 5) {
-          // console.log(computerScore > playerScore);
-          // console.log(playerScore > computerScore);
-          // console.log("Rock");
           endGame(computerScore, playerScore);
         } 
       }
@@ -90,11 +90,8 @@
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         } 
-        // console.log(computerScore, playerScore);
+        divScoreResults.innerHTML = `${playerScore} - ${computerScore}`;
         if (computerScore === 5 || playerScore === 5) {
-          // console.log(computerScore > playerScore);
-          // console.log(playerScore > computerScore);
-          // console.log("Paper");
           endGame(computerScore, playerScore);
         } 
       }
@@ -113,7 +110,7 @@
           divScoreText.innerHTML = `You chose ${playerSelection}. Opponent chose ${computerSelection}.\n\nYou won a round!`;
           playerScore++;
         } 
-        console.log(computerScore, playerScore);
+        divScoreResults.innerHTML = `${playerScore} - ${computerScore}`;
         if (computerScore === 5 || playerScore === 5) {
           console.log(computerScore > playerScore);
           console.log(playerScore > computerScore);
@@ -132,11 +129,11 @@
 
         // Display results
         if (computerScore > playerScore) {
-          divScoreResults.innerHTML = "Opponent won the game =(";
+          divScoreWinLoose.innerHTML = "Opponent won the game =(";
         } else if (playerScore > computerScore) {
-          divScoreResults.innerHTML = "You won the game!";
+          divScoreWinLoose.innerHTML = "You won the game!";
         } else {
-          divScoreResults.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
+          divScoreWinLoose.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
         }
 
         // Display New Game button
@@ -151,7 +148,7 @@
         playerScore = 0;
         computerScore = 0;
         divScoreText.innerHTML = '';
-        divScoreResults.innerHTML = '';
+        divScoreWinLoose.innerHTML = '';
       }
   </script>
 </body>
