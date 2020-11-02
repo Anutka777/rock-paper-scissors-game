@@ -114,9 +114,6 @@ function playSingleRoundWithScissors(e) {
     } 
     divScoreResults.innerHTML = `${playerScore} - ${computerScore}`;
     if (computerScore === 5 || playerScore === 5) {
-      console.log(computerScore > playerScore);
-      console.log(playerScore > computerScore);
-      console.log("Scissors");
       endGame(computerScore, playerScore);
     }
   }

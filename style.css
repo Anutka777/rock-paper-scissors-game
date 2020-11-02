@@ -75,3 +75,18 @@ button {
 #scoreResults, #scoreWinLoose {
   font-size: 50px;
 }
+
+#scoreWinLoose {
+  padding-top: 40px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  font-family: 'Sigmar One', cursive;
+}
