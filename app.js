@@ -124,6 +124,8 @@ function endGame(computerScore, playerScore) {
  // Hide buttons 
  Array.from(buttons).forEach(function(btn) {
    btn.style.display = 'none';
+   // Fixing stuck buttons
+   btn.classList.remove('clicked-button');
  });
 
   // Display results
