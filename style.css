@@ -130,7 +130,7 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   #button-container {
     padding: 50px 0;
   }
