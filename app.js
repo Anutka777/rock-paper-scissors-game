@@ -136,7 +136,7 @@ function endGame(computerScore, playerScore) {
     divScoreWinLoose.innerHTML = "You won the game!";
     divScoreText.innerHTML = '';
   } else {
-    divScoreWinLoose.innerHTML = "Oops! Something went wrong here. Contact me if you see thimessage\nYou can refresh page for new game.";
+    divScoreWinLoose.innerHTML = "Oops! Something went wrong here. Contact me if you see this message\nYou can refresh page for new game.";
     divScoreText.innerHTML = '';
   
   // Display New Game button
