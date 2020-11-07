@@ -12,8 +12,8 @@ body {
 button {
   display: block;
   justify-self: end;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   background: no-repeat;
   border: none;
   outline:none;
@@ -55,17 +55,14 @@ button {
 
 #rock {
   background-image: url(img/stones.png);
-  /* background-position: 1px 0; */
 }
 
 #paper {
   background-image: url(img/copy.png);
-  /* background-position: 0 1px; */
 }
 
 #scissors {
   background-image: url(img/scissors.png);
-  /* background-position: 1px 1px; */
 }
 
 /* Added div */
@@ -130,54 +127,6 @@ footer {
   }
 }
 
-@media (min-width: 1600px) {
-  #button-container {
-    padding: 50px 0;
-  }
-
-  button {
-    width: 240px;
-    height: 240px;
-    font-size: 50px;
-  }
-
-  #scoreText {
-    font-size: 40px;
-  }
-
-  #scoreResults, #scoreWinLoose {
-    font-size: 90px;
-  }
-}
-
-@media (min-width: 1025px) {
-  #button-container {
-    padding: 60px 0;
-  }
-
-  button {
-    font-size: 40px;
-  }
-
-  #scoreText {
-    font-size: 32px;
-  }
-
-  #scoreResults, #scoreWinLoose {
-    font-size: 70px;
-  }
-}
-
-@media (min-width: 769px) {
-  #scoreText {
-    font-size: 32px;
-  }
-
-  #scoreResults, #scoreWinLoose {
-    font-size: 70px;
-  }
-}
-
 @media (max-width: 480px) and (orientation: portrait) {
   button {
     width: 80px;
@@ -202,3 +151,51 @@ footer {
     font-size: 10px;
   }
   }
+
+@media (min-width: 769px) {
+  #scoreText {
+    font-size: 25px;
+  }
+
+  #scoreResults, #scoreWinLoose {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #button-container {
+    padding: 50px 0;
+  }
+
+  button {
+    font-size: 32px;
+  }
+
+  #scoreText {
+    font-size: 25px;
+  }
+
+  #scoreResults, #scoreWinLoose {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  #button-container {
+    padding: 50px 0;
+  }
+
+  button {
+    width: 240px;
+    height: 240px;
+    font-size: 50px;
+  }
+
+  #scoreText {
+    font-size: 40px;
+  }
+
+  #scoreResults, #scoreWinLoose {
+    font-size: 90px;
+  }
+}
