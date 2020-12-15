@@ -130,7 +130,7 @@ function endGame(computerScore, playerScore) {
 
   // Display results
   if (computerScore > playerScore) {
-    divScoreWinLoose.innerHTML = "Opponent won the game.";
+    divScoreWinLoose.innerHTML = "You lost the game.";
     divScoreText.innerHTML = '';
   } else if (playerScore > computerScore) {
     divScoreWinLoose.innerHTML = "You won the game!";
