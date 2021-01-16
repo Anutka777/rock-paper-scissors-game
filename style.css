@@ -54,15 +54,15 @@ button {
 }
 
 #rock {
-  background-image: url(img/stones.png);
+  background-image: url(img/stones.svg);
 }
 
 #paper {
-  background-image: url(img/copy.png);
+  background-image: url(img/copy.svg);
 }
 
 #scissors {
-  background-image: url(img/scissors.png);
+  background-image: url(img/scissors.svg);
 }
 
 /* Added div */
