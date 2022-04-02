@@ -1,7 +1,7 @@
 // Variables for DOM
-container = document.getElementById('container');
-buttons = document.querySelectorAll('.choice');
-ngButton = document.getElementById('newGame');
+let container = document.getElementById('container');
+let buttons = document.querySelectorAll('.choice');
+let ngButton = document.getElementById('newGame');
 
 // Storing game score
 let playerScore = 0;
@@ -45,6 +45,7 @@ function removeClass(e) {
 
 // Function for rock button
 function playSingleRoundWithRock(e) {
+  document.getElementById('audio').play();
   
   // Button animation
   e.target.classList.add('clicked-button');
@@ -70,6 +71,7 @@ function playSingleRoundWithRock(e) {
 
 // Function fo paper button
 function playSingleRoundWithPaper(e) {
+  document.getElementById('audio').play();
 
   // Button animation
   e.target.classList.add('clicked-button');
@@ -95,6 +97,7 @@ function playSingleRoundWithPaper(e) {
 
 // Function for Scissors button
 function playSingleRoundWithScissors(e) {
+  document.getElementById('audio').play();
 
   // Button animation
   e.target.classList.add('clicked-button');
@@ -146,6 +149,7 @@ function endGame(computerScore, playerScore) {
    
 // New Game function
 function newGame() {
+  document.getElementById('audio').play();
 
   // Show button choices
   Array.from(buttons).forEach(function(btn) {
